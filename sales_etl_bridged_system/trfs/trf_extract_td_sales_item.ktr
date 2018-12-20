@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>trf_extract_td_sales</name>
+    <name>trf_extract_td_sales_item</name>
     <description />
     <extended_description />
     <trans_version />
@@ -11,12 +11,12 @@
     <parameters>
       <parameter>
         <name>end_date</name>
-        <default_value>2018-11-28</default_value>
+        <default_value>2018-12-16</default_value>
         <description />
       </parameter>
       <parameter>
         <name>start_date</name>
-        <default_value>2018-02-04</default_value>
+        <default_value>2018-12-02</default_value>
         <description />
       </parameter>
     </parameters>
@@ -581,7 +581,7 @@
     <connection>mssql sho_staging_prod</connection>
     <schema>teradata</schema>
     <table>td_sales_dly_sales_sku</table>
-    <commit>500</commit>
+    <commit>250</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
@@ -609,6 +609,14 @@
         <stream_name>DIV_NO</stream_name>
       </field>
       <field>
+        <column_name>ITEM_NBR</column_name>
+        <stream_name>ITEM_NBR</stream_name>
+      </field>
+      <field>
+        <column_name>SKU_NBR</column_name>
+        <stream_name>SKU_NBR</stream_name>
+      </field>
+      <field>
         <column_name>NETSALES</column_name>
         <stream_name>NETSALES</stream_name>
       </field>
@@ -617,16 +625,16 @@
         <stream_name>NETUNITS</stream_name>
       </field>
       <field>
+        <column_name>TRS_TYP_CD</column_name>
+        <stream_name>TRS_TYP_CD</stream_name>
+      </field>
+      <field>
+        <column_name>SLS_TYP_CD</column_name>
+        <stream_name>SLS_TYP_CD</stream_name>
+      </field>
+      <field>
         <column_name>REC_LOAD_DTM</column_name>
         <stream_name>rec_load_dtm</stream_name>
-      </field>
-      <field>
-        <column_name>ITEM_NBR</column_name>
-        <stream_name>ITEM_NBR</stream_name>
-      </field>
-      <field>
-        <column_name>SKU_NBR</column_name>
-        <stream_name>SKU_NBR</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -637,8 +645,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>208</yloc>
+      <xloc>192</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -662,19 +670,19 @@ a.ITM_NO as ITEM_NBR,
 b.SKU_NO as SKU_NBR, 
 b.SLL_DLR as NETSALES, 
 b.UN_QT as NETUNITS,
+b.TRS_TYP_CD, 
+b.SLS_TYP_CD,
 current_timestamp as rec_load_dtm
 from 
 SPRS_DW_VIEWS.PRODUCT a,
 SPRS_DW_VIEWS.sales b ,
 shc_work_tbls.TS_SHO_locations c
-
 WHERE 
 a.PRD_IRL_NO = b.PRD_IRL_NO
 AND b.LOC_NO = c.LOC_NO
 AND b.TRS_TYP_CD NOT IN ('M') 
 AND b.LOC_NO NOT IN (9322) 
 AND b.TRS_DT Between date '${start_date}' And date '${end_date}'
-
 </sql>
     <limit>0</limit>
     <lookup />
@@ -689,7 +697,7 @@ AND b.TRS_DT Between date '${start_date}' And date '${end_date}'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>192</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>

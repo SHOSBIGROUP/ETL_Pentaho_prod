@@ -2,9 +2,9 @@
 <transformation>
   <info>
     <name>trf_get_date_ranges</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
     <directory>/</directory>
@@ -12,27 +12,27 @@
       <parameter>
         <name>end_date</name>
         <default_value>2999-12-31</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>fiscal_month_year_nbr_override</name>
         <default_value>0</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>start_date</name>
         <default_value>1900-01-01</default_value>
-        <description/>
+        <description />
       </parameter>
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -57,37 +57,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -141,11 +141,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -223,10 +223,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -289,10 +289,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -365,10 +365,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -417,9 +417,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -430,7 +430,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -452,17 +452,17 @@
   <notepads>
   </notepads>
   <connection>
-    <name>mssql sho_dw</name>
-    <server>AZSQL01.ads.shos.com</server>
+    <name>mssql sho_dw_prod</name>
+    <server>${DB_SERVERNAME_BI_MSSQL_PROD}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>sho_dw</database>
     <port>1433</port>
     <username>${DB_SHO_MSSQL_ETL_USERNAME}</username>
     <password>${DB_SHO_MSSQL_ETL_PW}</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -570,13 +570,13 @@
   <step>
     <name>Get System Info</name>
     <type>SystemInfo</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
@@ -584,7 +584,7 @@
         <type>system date (fixed)</type>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -600,23 +600,23 @@
   <step>
     <name>Get Variables</name>
     <type>GetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>fiscal_month_nbr</name>
         <variable>${fiscal_month_year_nbr_override}</variable>
         <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -625,10 +625,10 @@
         <name>start_date</name>
         <variable>${start_date}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -637,16 +637,16 @@
         <name>end_date</name>
         <variable>${end_date}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -662,16 +662,16 @@
   <step>
     <name>If field value is null</name>
     <type>IfNull</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <replaceAllByValue>0</replaceAllByValue>
-    <replaceAllMask/>
+    <replaceAllMask />
     <selectFields>Y</selectFields>
     <selectValuesType>N</selectValuesType>
     <setEmptyStringAll>N</setEmptyStringAll>
@@ -681,11 +681,11 @@
       <field>
         <name>fiscal_month_nbr</name>
         <value>0</value>
-        <mask/>
+        <mask />
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -701,20 +701,20 @@
   <step>
     <name>Route Monthly Override Flow</name>
     <type>SwitchCase</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fieldname>fiscal_month_nbr</fieldname>
     <use_contains>N</use_contains>
     <case_value_type>Integer</case_value_type>
-    <case_value_format/>
-    <case_value_decimal/>
-    <case_value_group/>
+    <case_value_format />
+    <case_value_decimal />
+    <case_value_group />
     <default_target_step>get fiscal month range for month</default_target_step>
     <cases>
       <case>
@@ -722,7 +722,7 @@
         <target_step>Get System Info</target_step>
       </case>
     </cases>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -738,18 +738,17 @@
   <step>
     <name>format date for lookup</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>N</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>curr_date_os</name>
-        <rename/>
       </field>
       <field>
         <name>new_end_date</name>
@@ -764,14 +763,14 @@
         <precision>-2</precision>
         <conversion_mask>yyyy-MM-dd</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
+        <date_format_locale />
+        <date_format_timezone />
         <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
       </meta>
       <meta>
         <name>end_date</name>
@@ -781,17 +780,17 @@
         <precision>-2</precision>
         <conversion_mask>yyyy-MM-dd</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
+        <date_format_locale />
+        <date_format_timezone />
         <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
       </meta>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -807,22 +806,20 @@
   <step>
     <name>format mtd start date</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>start_date</name>
-        <rename/>
       </field>
       <field>
         <name>end_date</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -833,14 +830,14 @@
         <precision>-2</precision>
         <conversion_mask>yyyy-MM-dd</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
+        <date_format_locale />
+        <date_format_timezone />
         <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
       </meta>
       <meta>
         <name>end_date</name>
@@ -850,17 +847,17 @@
         <precision>-2</precision>
         <conversion_mask>yyyy-MM-dd</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
+        <date_format_locale />
+        <date_format_timezone />
         <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
       </meta>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -876,13 +873,13 @@
   <step>
     <name>format mtd start date 2</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
@@ -900,14 +897,14 @@
         <precision>-2</precision>
         <conversion_mask>yyyy-MM-dd</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
+        <date_format_locale />
+        <date_format_timezone />
         <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
       </meta>
       <meta>
         <name>end_date</name>
@@ -917,17 +914,17 @@
         <precision>-2</precision>
         <conversion_mask>yyyy-MM-dd</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
+        <date_format_locale />
+        <date_format_timezone />
         <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
       </meta>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -943,38 +940,38 @@
   <step>
     <name>get MTD start</name>
     <type>DBLookup</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>mssql sho_dw</connection>
+    <connection>mssql sho_dw_prod</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dim</schema>
       <table>calendar</table>
-      <orderby/>
+      <orderby />
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>curr_date_os</name>
         <field>calendar_dt</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <value>
         <name>fiscal_month_start_dt</name>
         <rename>start_date</rename>
-        <default/>
+        <default />
         <type>Date</type>
       </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -990,44 +987,44 @@
   <step>
     <name>get fiscal month range for month</name>
     <type>DBLookup</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>mssql sho_dw</connection>
+    <connection>mssql sho_dw_prod</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dim</schema>
       <table>calendar</table>
-      <orderby/>
+      <orderby />
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>fiscal_month_nbr</name>
         <field>fiscal_month_year_nbr</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <value>
         <name>fiscal_month_start_dt</name>
         <rename>start_date</rename>
-        <default/>
+        <default />
         <type>Date</type>
       </value>
       <value>
         <name>fiscal_month_end_dt</name>
         <rename>end_date</rename>
-        <default/>
+        <default />
         <type>Date</type>
       </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1043,13 +1040,13 @@
   <step>
     <name>offset currdate calc start_date</name>
     <type>ScriptValueMod</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
@@ -1109,7 +1106,7 @@ Alert(dateAdd(d1, "wd", 5));</jsScript_script>
         <replace>N</replace>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1125,30 +1122,30 @@ Alert(dateAdd(d1, "wd", 5));</jsScript_script>
   <step>
     <name>set start date var</name>
     <type>SetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <field_name>start_date</field_name>
         <variable_name>start_date</variable_name>
         <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>end_date</field_name>
         <variable_name>end_date</variable_name>
         <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1164,15 +1161,15 @@ Alert(dateAdd(d1, "wd", 5));</jsScript_script>
   <step_error_handling>
     <error>
       <source_step>format date for lookup</source_step>
-      <target_step/>
+      <target_step />
       <is_enabled>Y</is_enabled>
-      <nr_valuename/>
-      <descriptions_valuename/>
-      <fields_valuename/>
-      <codes_valuename/>
-      <max_errors/>
-      <max_pct_errors/>
-      <min_pct_rows/>
+      <nr_valuename />
+      <descriptions_valuename />
+      <fields_valuename />
+      <codes_valuename />
+      <max_errors />
+      <max_pct_errors />
+      <min_pct_rows />
     </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

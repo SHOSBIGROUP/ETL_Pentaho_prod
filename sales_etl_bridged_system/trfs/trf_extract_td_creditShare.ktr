@@ -581,7 +581,7 @@
     <connection>mssql sho_staging_prod</connection>
     <schema>teradata</schema>
     <table>td_sales_dly_credit_share</table>
-    <commit>1000</commit>
+    <commit>50</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>

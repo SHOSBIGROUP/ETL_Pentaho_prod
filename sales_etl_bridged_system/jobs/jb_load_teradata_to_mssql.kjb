@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
   <name>jb_load_teradata_to_mssql</name>
-  <description />
-  <extended_description />
-  <job_version />
+  <description/>
+  <extended_description/>
+  <job_version/>
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
@@ -14,33 +14,33 @@
     <parameter>
       <name>end_date</name>
       <default_value>2999-01-01</default_value>
-      <description />
+      <description/>
     </parameter>
     <parameter>
       <name>fiscal_month_year_nbr_override</name>
-      <default_value />
-      <description />
+      <default_value/>
+      <description/>
     </parameter>
     <parameter>
       <name>out_filename</name>
-      <default_value />
-      <description />
+      <default_value/>
+      <description/>
     </parameter>
     <parameter>
       <name>start_date</name>
       <default_value>1900-01-01</default_value>
-      <description />
+      <description/>
     </parameter>
   </parameters>
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection />
-    <schema />
-    <table />
-    <size_limit_lines />
-    <interval />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <size_limit_lines/>
+    <interval/>
+    <timeout_days/>
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -148,10 +148,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -239,10 +239,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -305,29 +305,30 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file />
+  <shared_objects_file/>
   <entries>
     <entry>
       <name>trf_extract_td_sales</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -338,12 +339,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -352,11 +353,13 @@
       <nr>0</nr>
       <xloc>208</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>START</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -372,38 +375,42 @@
       <nr>0</nr>
       <xloc>64</xloc>
       <yloc>32</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Success</name>
-      <description />
+      <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1728</xloc>
       <yloc>672</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_brandSales</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_brandSales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -414,12 +421,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -428,28 +435,30 @@
       <nr>0</nr>
       <xloc>400</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_bulk_sales</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_bulk_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -460,12 +469,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -474,28 +483,30 @@
       <nr>0</nr>
       <xloc>592</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_lease_sales</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_lease_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -506,12 +517,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -520,28 +531,30 @@
       <nr>0</nr>
       <xloc>800</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_markdown</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_markdown.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -552,12 +565,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -566,28 +579,30 @@
       <nr>0</nr>
       <xloc>992</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_pa_sales</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_pa_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -598,12 +613,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -612,28 +627,30 @@
       <nr>0</nr>
       <xloc>1168</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_paMerch</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_paMerch.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -644,12 +661,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -658,28 +675,30 @@
       <nr>0</nr>
       <xloc>1328</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_spp_merch</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_spp_merch.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -690,12 +709,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -704,28 +723,30 @@
       <nr>0</nr>
       <xloc>1472</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_spp_sales</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_spp_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -736,12 +757,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -750,28 +771,30 @@
       <nr>0</nr>
       <xloc>1632</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_creditShare</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_creditShare.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -782,12 +805,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -796,28 +819,30 @@
       <nr>0</nr>
       <xloc>1808</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_avgTicket</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_avgTicket.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -828,12 +853,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -842,28 +867,30 @@
       <nr>0</nr>
       <xloc>1728</xloc>
       <yloc>496</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_lease_sales_div</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_lease_sales_div.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -874,12 +901,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -888,28 +915,30 @@
       <nr>1</nr>
       <xloc>1728</xloc>
       <yloc>400</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_get_date_ranges</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\common\trfs\trf_get_date_ranges.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -920,7 +949,7 @@
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>fiscal_month_year_nbr_override</name>
-          <stream_name />
+          <stream_name/>
           <value>${fiscal_month_year_nbr_override}</value>
         </parameter>
       </parameters>
@@ -929,19 +958,21 @@
       <nr>0</nr>
       <xloc>208</xloc>
       <yloc>32</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Simple evaluation</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
+      <attributes/>
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${start_date}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1900-01-01</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -951,28 +982,30 @@
       <nr>0</nr>
       <xloc>64</xloc>
       <yloc>128</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_guardsman</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_avgTicket.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -983,12 +1016,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -997,28 +1030,30 @@
       <nr>1</nr>
       <xloc>1728</xloc>
       <yloc>576</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_sales 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1029,12 +1064,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1042,29 +1077,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>208</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_brandSales 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_brandSales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1075,12 +1112,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1088,29 +1125,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>400</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_bulk_sales 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_bulk_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1121,12 +1160,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1134,29 +1173,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>592</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_lease_sales 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_lease_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1167,12 +1208,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1180,29 +1221,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>800</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_markdown 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_markdown.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1213,12 +1256,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1226,29 +1269,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>992</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_pa_sales 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_pa_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1259,12 +1304,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1272,29 +1317,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1168</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_paMerch 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_paMerch.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1305,12 +1352,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1318,29 +1365,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1328</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_spp_merch 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_spp_merch.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1351,12 +1400,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1364,29 +1413,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1472</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_spp_sales 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_spp_sales.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1397,12 +1448,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1410,29 +1461,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1632</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_creditShare 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_creditShare.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1443,12 +1496,12 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
@@ -1456,29 +1509,31 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1808</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_lease_sales_div 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_lease_sales_div.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1489,42 +1544,44 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1552</xloc>
+      <xloc>1456</xloc>
       <yloc>400</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_avgTicket 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_avgTicket.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1535,42 +1592,44 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1552</xloc>
+      <xloc>1456</xloc>
       <yloc>496</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>trf_extract_td_guardsman 2</name>
-      <description />
+      <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${KETTLE_JOB_DIR_PROD}\sales_etl_bridged_system\trfs\trf_extract_td_avgTicket.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1581,20 +1640,203 @@
         <pass_all_parameters>N</pass_all_parameters>
         <parameter>
           <name>start_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${start_date}</value>
         </parameter>
         <parameter>
           <name>end_date</name>
-          <stream_name />
+          <stream_name/>
           <value>${end_date}</value>
         </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1552</xloc>
+      <xloc>1456</xloc>
       <yloc>576</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>208</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>400</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>800</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>992</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1168</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1328</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1472</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1632</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1808</xloc>
+      <yloc>224</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1600</xloc>
+      <yloc>400</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1600</xloc>
+      <yloc>496</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Wait for 2 2 2 2 2 2 2 2 2 2 2 2</name>
+      <description/>
+      <type>DELAY</type>
+      <attributes/>
+      <maximumTimeout>20</maximumTimeout>
+      <scaletime>0</scaletime>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1600</xloc>
+      <yloc>576</yloc>
+      <attributes_kjc/>
     </entry>
   </entries>
   <hops>
@@ -1752,33 +1994,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_sales</from>
-      <to>trf_extract_td_sales 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_sales 2</from>
-      <to>trf_extract_td_brandSales</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_brandSales</from>
-      <to>trf_extract_td_brandSales 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_brandSales 2</from>
       <to>trf_extract_td_bulk_sales</to>
       <from_nr>0</from_nr>
@@ -1786,15 +2001,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_bulk_sales</from>
-      <to>trf_extract_td_bulk_sales 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>trf_extract_td_bulk_sales 2</from>
@@ -1806,15 +2012,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_lease_sales</from>
-      <to>trf_extract_td_lease_sales 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_lease_sales 2</from>
       <to>trf_extract_td_markdown</to>
       <from_nr>0</from_nr>
@@ -1822,15 +2019,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_markdown</from>
-      <to>trf_extract_td_markdown 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>trf_extract_td_markdown 2</from>
@@ -1842,15 +2030,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_pa_sales</from>
-      <to>trf_extract_td_pa_sales 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_pa_sales 2</from>
       <to>trf_extract_td_paMerch</to>
       <from_nr>0</from_nr>
@@ -1858,15 +2037,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_paMerch</from>
-      <to>trf_extract_td_paMerch 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>trf_extract_td_paMerch 2</from>
@@ -1878,15 +2048,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_spp_merch</from>
-      <to>trf_extract_td_spp_merch 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_spp_merch 2</from>
       <to>trf_extract_td_spp_sales</to>
       <from_nr>0</from_nr>
@@ -1896,15 +2057,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_spp_sales</from>
-      <to>trf_extract_td_spp_sales 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_spp_sales 2</from>
       <to>trf_extract_td_creditShare</to>
       <from_nr>0</from_nr>
@@ -1912,24 +2064,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_creditShare</from>
-      <to>trf_extract_td_creditShare 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>trf_extract_td_lease_sales_div</from>
-      <to>trf_extract_td_lease_sales_div 2</to>
-      <from_nr>1</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>trf_extract_td_creditShare 2</from>
@@ -1950,15 +2084,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_avgTicket</from>
-      <to>trf_extract_td_avgTicket 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_avgTicket 2</from>
       <to>trf_extract_td_guardsman</to>
       <from_nr>0</from_nr>
@@ -1968,15 +2093,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>trf_extract_td_guardsman</from>
-      <to>trf_extract_td_guardsman 2</to>
-      <from_nr>1</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>trf_extract_td_guardsman 2</from>
       <to>Success</to>
       <from_nr>1</from_nr>
@@ -1984,6 +2100,249 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_sales</from>
+      <to>Wait for</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for</from>
+      <to>trf_extract_td_sales 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_sales 2</from>
+      <to>trf_extract_td_brandSales</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_brandSales</from>
+      <to>Wait for 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2</from>
+      <to>trf_extract_td_brandSales 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_bulk_sales</from>
+      <to>Wait for 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2</from>
+      <to>trf_extract_td_bulk_sales 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_lease_sales</from>
+      <to>Wait for 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2</from>
+      <to>trf_extract_td_lease_sales 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_markdown</from>
+      <to>Wait for 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2</from>
+      <to>trf_extract_td_markdown 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_pa_sales</from>
+      <to>Wait for 2 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2</from>
+      <to>trf_extract_td_pa_sales 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_paMerch</from>
+      <to>Wait for 2 2 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2</from>
+      <to>trf_extract_td_paMerch 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_spp_merch</from>
+      <to>Wait for 2 2 2 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2 2</from>
+      <to>trf_extract_td_spp_merch 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_spp_sales</from>
+      <to>Wait for 2 2 2 2 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2 2 2</from>
+      <to>trf_extract_td_spp_sales 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_creditShare</from>
+      <to>Wait for 2 2 2 2 2 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2 2 2 2</from>
+      <to>trf_extract_td_creditShare 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_lease_sales_div</from>
+      <to>Wait for 2 2 2 2 2 2 2 2 2 2</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2 2 2 2 2</from>
+      <to>trf_extract_td_lease_sales_div 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_avgTicket</from>
+      <to>Wait for 2 2 2 2 2 2 2 2 2 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2 2 2 2 2 2</from>
+      <to>trf_extract_td_avgTicket 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>trf_extract_td_guardsman</from>
+      <to>Wait for 2 2 2 2 2 2 2 2 2 2 2 2</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Wait for 2 2 2 2 2 2 2 2 2 2 2 2</from>
+      <to>trf_extract_td_guardsman 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

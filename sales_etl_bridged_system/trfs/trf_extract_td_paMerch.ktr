@@ -11,12 +11,12 @@
     <parameters>
       <parameter>
         <name>end_date</name>
-        <default_value>2018-03-26</default_value>
+        <default_value>2019-03-03</default_value>
         <description />
       </parameter>
       <parameter>
         <name>start_date</name>
-        <default_value>2018-03-04</default_value>
+        <default_value>2019-02-03</default_value>
         <description />
       </parameter>
     </parameters>
@@ -448,7 +448,7 @@
   </notepads>
   <connection>
     <name>mssql sho_staging_prod</name>
-    <server>${DB_SERVERNAME_BI_MSSQL_PROD}</server>
+    <server>PRODSQLFCI.ads.shos.com</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>sho_staging</database>
@@ -646,33 +646,77 @@
       <schema_name />
     </partitioning>
     <connection>teradata_pos_dw_views</connection>
-    <sql>SELECT 		S.TRS_DT,
-			S.LOC_NO,
-			S.pos_div,
+    <sql>
+--id pa elig (
+SELECT 		PA_MERCH_SALES.TRS_DT,
+			PA_MERCH_SALES.LOC_NO,
+			PA_MERCH_SALES.POS_DIV,
 			current_timestamp as rec_load_dtm,
-			SUM((CASE WHEN S.TRS_TYP_CD='S' THEN 1 ELSE -1 END)*S.SLL_DLR) AS NetSales ,
-			SUM((CASE WHEN S.TRS_TYP_CD='S' THEN 1 ELSE -1 END)*S.UN_QT) AS PAMUNITS 
+			sum(coalesce(PA_MERCH_SALES.NetSales,0)) - sum(coalesce(BULK_PA_SALES.BULK_SALES,0)) as NetSales ,
+			sum(coalesce(PA_MERCH_SALES.PAMUNITS,0)) - sum(coalesce(BULK_PA_SALES.BULK_UNIT,0)) as PAMUNITS
+			 
+			 
 
-FROM 			SPRS_DW_VIEWS.PRODUCT P,
-						shc_work_tbls.TS_SHO_locations L,
-						SPRS_DW_VIEWS.PRODUCT_ATTRIBUTE A,
-						SPRS_DW_VIEWS.SALES S 
-
-
-WHERE 		S.TRS_RSN_CD NOT BETWEEN 55 AND 59 
+FROM 		
+			(
+				SELECT 		S.TRS_DT,
+							S.LOC_NO,
+							S.pos_div,
+							P.ITM_NO,
+							SUM((CASE WHEN S.TRS_TYP_CD='S' THEN 1 ELSE -1 END)*S.SLL_DLR) AS NetSales ,
+							SUM((CASE WHEN S.TRS_TYP_CD='S' THEN 1 ELSE -1 END)*S.UN_QT) AS PAMUNITS
+				FROM
+							SPRS_DW_VIEWS.SALES S 
+					INNER JOIN SPRS_DW_VIEWS.PRODUCT P ON (S.PRD_IRL_NO=P.PRD_IRL_NO)
+					INNER JOIN shc_work_tbls.TS_SHO_locations L ON (S.LOC_NO=L.LOC_NO)
+					INNER JOIN SPRS_DW_VIEWS.PRODUCT_ATTRIBUTE A ON (S.PRD_IRL_NO=A.PRD_IRL_NO)
+			
+				WHERE 		S.TRS_RSN_CD NOT BETWEEN 55 AND 59 
 						AND A.PRD_CHR_CD='PX'
 						AND A.PRD_CHR_ATR_CD='0967' 
-						AND A.PRD_IRL_NO=S.PRD_IRL_NO
 						AND S.SLS_TYP_CD&lt;&gt;'M' 
-						AND S.LOC_NO NOT IN (9322 )
-						 
-						AND S.LOC_NO=L.LOC_NO
-						AND S.PRD_IRL_NO=P.PRD_IRL_NO 
+						AND S.LOC_NO NOT IN (9322)
 						AND P.GRO_NO=801
 						AND S.TRS_TYP_CD&lt;&gt;'D' 
 						AND S.TRS_DT Between date '${start_date}' And date '${end_date}'
-
-GROUP BY 1, 2, 3, 4</sql>
+				
+				GROUP BY 1, 2, 3, 4
+			
+			) PA_MERCH_SALES
+				
+			LEFT JOIN (
+				SELECT   						                                                   
+					sales.trs_dt,
+					sales.fty_id_no as LOC_NO,
+					cast(sales.DIV_OGP_NO as smallint) as DIV_NO,
+					cast(sales.PRD_ITM_NO as integer) as ITM_NO,
+					SUM(case WHEN sales.LN_ITM_TRS_TYP_CD in ('C','R')   THEN -1 WHEN LN_ITM_TRS_TYP_CD in ('S')  THEN 1 ELSE 0 END * sales.PRD_QT) as BULK_UNIT,
+					sum(sales.POS_SLS_TRS_AM+sales.TOT_LN_MD_AM) AS BULK_SALES
+                                              
+				FROM pos_dw_views.posxtpp_prd_lin sales
+				
+				INNER JOIN (
+					SELECT fty_id_no, trs_no, cus_ian_id_no, ian_typ_cd, trs_dt, trs_ln_no
+					FROM POS_DW_VIEWS.POSXTMD_MK_DISC
+					WHERE trs_dt between '${start_date}' AND '${end_date}'
+						AND md_cpn_no IN ('72010251','72010252','72010520','00039233','72010513','72010795','72010795','46059','72011272','72011495','72011657','72011917','72012039','72012175')
+					GROUP BY 1,2,3,4,5,6
+				) coupons ON (	sales.CUS_IAN_ID_NO =coupons.CUS_IAN_ID_NO
+								AND sales.ian_typ_cd = coupons.ian_typ_cd
+								--AND sales.trs_dt = coupons.trs_dt
+								--AND sales.trs_ln_no = coupons.trs_ln_no
+							)
+				
+				WHERE sales.trs_dt between '${start_date}' AND '${end_date}'
+					
+					
+				GROUP BY 1,2,3,4
+			) BULK_PA_SALES ON (		PA_MERCH_SALES.trs_dt = BULK_PA_SALES.trs_dt 
+									AND PA_MERCH_SALES.LOC_NO = BULK_PA_SALES.LOC_NO
+									AND PA_MERCH_SALES.POS_DIV = BULK_PA_SALES.DIV_NO
+									AND PA_MERCH_SALES.ITM_NO = BULK_PA_SALES.ITM_NO
+								)
+GROUP BY 1,2,3</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -686,7 +730,7 @@ GROUP BY 1, 2, 3, 4</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>176</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
